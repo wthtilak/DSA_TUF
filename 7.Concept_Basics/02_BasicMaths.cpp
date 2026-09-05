@@ -24,27 +24,27 @@ void numberOfOddDigits()
 
     while (num > 0)
     {
-        int ld = num % 10;
+        int lastDigit = num % 10;
         num = num / 10;
 
-        if (ld % 2 != 0)
+        if (lastDigit % 2 != 0)
             ++count;
     }
     cout << count << endl;
 }
 void reverseNumber()
 {
-    int num, newNum = 0;
+    int num, revNum = 0;
     cout << "Enter the No. :";
     cin >> num;
 
     while (num != 0)
     {
-        int ld = num % 10;
-        newNum = newNum * 10 + ld;
+        int lastDigit = num % 10;
+        revNum = revNum * 10 + lastDigit;
         num /= 10;
     }
-    cout << newNum << endl;
+    cout << revNum << endl;
 }
 
 int main()
