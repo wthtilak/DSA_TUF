@@ -124,6 +124,19 @@ bool checkPrime(int n)
     }
     return true;
 }
+int primeUptoN(int n)
+{
+
+    int count = 0;
+    if (n == 1)
+        return 0;
+    for (int i = 2; i <= n - 1; ++i)
+    {
+        if (checkPrime(i))
+            count++;
+    }
+    return count;
+}
 
 int main()
 {
@@ -138,6 +151,7 @@ int main()
     // cout << factorial(5); // 120
     // cout << armStrongNumber(370);
     // cout << perfectNumber(28) << endl; // 1 (true)
-    cout << checkPrime(5);//1 (true)
+    // cout << checkPrime(5);//1 (true)
+    cout << primeUptoN(6); // 3 (2,3,5)
     return 0;
 }
