@@ -61,6 +61,21 @@ int largestDigit(int num)
     }
     return largest;
 }
+long factorial(long num)
+{
+    long factorial = 1;
+    if (num == 0 || num == 1)
+        return 1;
+    for (int i = 1; i <= num; i++)
+    {
+        factorial *= i;
+    }
+
+    return factorial;
+}
+
+
+
 int main()
 {
 
@@ -71,6 +86,7 @@ int main()
     // PalindromeNumber();
     // cout << Palindrome(434);
     // cout << largestDigit(01);
+    cout << factorial(5); // 120
 
     return 0;
 }
