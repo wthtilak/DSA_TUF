@@ -1,4 +1,5 @@
 #include <iostream>
+#include <math.h>
 using namespace std;
 
 void numberOfDigits()
@@ -73,8 +74,24 @@ long factorial(long num)
 
     return factorial;
 }
+bool armStrongNumber(int num)
+{
+    if (num < 0)
+        return false;
+    if (num == 0)
+        return true;
 
+    int result = 0, count = (int)log10(num) + 1;
+    int dupNum = num;
+    while (num > 0)
+    {
+        int lastDigit = num % 10;
+        result = result + pow(lastDigit, count);
+        num /= 10;
+    }
 
+    return (dupNum == result);
+}
 
 int main()
 {
@@ -86,7 +103,7 @@ int main()
     // PalindromeNumber();
     // cout << Palindrome(434);
     // cout << largestDigit(01);
-    cout << factorial(5); // 120
-
+    // cout << factorial(5); // 120
+    cout << armStrongNumber(370);
     return 0;
 }
