@@ -49,7 +49,18 @@ bool Palindrome(int num)
     int revNumber = reverseNumber(num);
     return (num == revNumber);
 }
-
+int largestDigit(int num)
+{
+    int largest = 0;
+    while (num > 0)
+    {
+        int lastDigit = num % 10;
+        if (lastDigit > largest)
+            swap(lastDigit, largest);
+        num /= 10;
+    }
+    return largest;
+}
 int main()
 {
 
@@ -58,6 +69,8 @@ int main()
     // int ans = reverseNumber(3452);
     // cout << ans<<endl;
     // PalindromeNumber();
-    //cout << Palindrome(434);
+    // cout << Palindrome(434);
+    // cout << largestDigit(01);
+
     return 0;
 }
