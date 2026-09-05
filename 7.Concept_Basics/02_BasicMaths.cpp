@@ -32,11 +32,9 @@ void numberOfOddDigits()
     }
     cout << count << endl;
 }
-void reverseNumber()
+int reverseNumber(int num)
 {
-    int num, revNum = 0;
-    cout << "Enter the No. :";
-    cin >> num;
+    int revNum = 0;
 
     while (num != 0)
     {
@@ -44,7 +42,12 @@ void reverseNumber()
         revNum = revNum * 10 + lastDigit;
         num /= 10;
     }
-    cout << revNum << endl;
+    return revNum;
+}
+bool Palindrome(int num)
+{
+    int revNumber = reverseNumber(num);
+    return (num == revNumber);
 }
 
 int main()
@@ -52,7 +55,9 @@ int main()
 
     // numberOfDigits();
     // numberOfOddDigits();
-    reverseNumber();
-
+    // int ans = reverseNumber(3452);
+    // cout << ans<<endl;
+    // PalindromeNumber();
+    //cout << Palindrome(434);
     return 0;
 }
