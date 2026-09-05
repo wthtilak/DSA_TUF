@@ -97,24 +97,33 @@ bool perfectNumber(int n)
     // A perfect Number is a Number whose divisors sum up
     // to the number itself excuding itself in sum.
     // eg. 6 = 1 + 2 + 3(all divides 6)
-    int sum = 1; 
-    if (n <= 1) 
+    int sum = 1;
+    if (n <= 1)
         return false;
     for (int i = 2; i * i <= n; i++)
-    { 
+    {
         if (n % i == 0)
         {
             sum += i;
             if (i != (n / i))
                 sum += n / i;
         }
-    } 
+    }
 
     return (sum == n);
-} 
+}
+bool checkPrime(int n)
+{
 
-
-
+    if (n == 1)
+        return false;
+    for (int i = 2; i * i <= n; i++)
+    {
+        if (n % i == 0)
+            return false;
+    }
+    return true;
+}
 
 int main()
 {
@@ -128,6 +137,7 @@ int main()
     // cout << largestDigit(01);
     // cout << factorial(5); // 120
     // cout << armStrongNumber(370);
-    cout <<perfectNumber(28) << endl; // 1 (true)
+    // cout << perfectNumber(28) << endl; // 1 (true)
+    cout << checkPrime(5);//1 (true)
     return 0;
 }
