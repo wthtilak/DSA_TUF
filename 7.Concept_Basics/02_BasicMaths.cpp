@@ -163,6 +163,19 @@ int gcdEuclidean(int n1, int n2)
     else
         return n2;
 }
+int lcm(int n1, int n2)
+{
+    int i = 1;
+    int maximum = max(n1, n2);
+    do
+    {
+        int multiple = i * maximum;
+        if (multiple % n1 == 0 && multiple % n2 == 0)
+            return multiple;
+        ++i;
+    } while (1);
+    return -1;
+}
 
 int main()
 {
@@ -181,6 +194,7 @@ int main()
     // cout << primeUptoN(6); // 3 (2,3,5)
     // cout << gcd(20, 40); // 20
     // cout << gcd(20, 40); // 20
-    cout << gcdEuclidean(39, 40); // 20      
+    // cout << gcdEuclidean(39, 40); // 20
+    cout << lcm(3, 4) << endl;
     return 0;
 }
