@@ -57,7 +57,8 @@ int largestDigit(int num)
     {
         int lastDigit = num % 10;
         if (lastDigit > largest)
-            swap(lastDigit, largest);
+            largest = lastDigit;
+
         num /= 10;
     }
     return largest;
@@ -195,7 +196,7 @@ int main()
     // cout << ans<<endl;
     // PalindromeNumber();
     // cout << Palindrome(434);
-    // cout << largestDigit(01);
+    cout << largestDigit(43428);
     // cout << factorial(5); // 120
     // cout << armStrongNumber(370);
     // cout << perfectNumber(28) << endl; // 1 (true)
@@ -205,6 +206,6 @@ int main()
     // cout << gcd(20, 40); // 20
     // cout << gcdEuclidean(39, 40); // 20
     // cout << lcm(3, 4) << endl;
-    cout << lcmUsingFormula(3, 13) << endl; // 39
+    // cout << lcmUsingFormula(3, 13) << endl; // 39
     return 0;
 }
