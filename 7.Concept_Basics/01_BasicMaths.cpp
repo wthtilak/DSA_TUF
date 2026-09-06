@@ -205,6 +205,6 @@ int main()
     // cout << gcd(20, 40); // 20
     // cout << gcdEuclidean(39, 40); // 20
     // cout << lcm(3, 4) << endl;
-    cout << lcmUsingFormula(3, 13) << endl;
+    cout << lcmUsingFormula(3, 13) << endl; // 39
     return 0;
 }
