@@ -149,6 +149,20 @@ int gcd(int n1, int n2)
     }
     return largest;
 }
+int gcdEuclidean(int n1, int n2)
+{
+    while (n1 != 0 && n2 != 0)
+    {
+        if (n1 > n2)
+            n1 = n1 % n2;
+        else
+            n2 = n2 % n1;
+    }
+    if (n2 == 0)
+        return n1;
+    else
+        return n2;
+}
 
 int main()
 {
@@ -165,8 +179,8 @@ int main()
     // cout << perfectNumber(28) << endl; // 1 (true)
     // cout << checkPrime(5);//1 (true)
     // cout << primeUptoN(6); // 3 (2,3,5)
-    //cout << gcd(20, 40); // 20
-    cout << gcd(20, 40); // 20
-
+    // cout << gcd(20, 40); // 20
+    // cout << gcd(20, 40); // 20
+    cout << gcdEuclidean(39, 40); // 20      
     return 0;
 }
