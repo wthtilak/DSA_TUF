@@ -137,6 +137,18 @@ int primeUptoN(int n)
     }
     return count;
 }
+int gcd(int n1, int n2)
+{
+    int largest = 1;
+    for (int i = min(n1, n2); i >= 1; i++)
+    {
+        if (n1 % i == 0 && n2 % i == 0)
+        {
+            return i;
+        }
+    }
+    return largest;
+}
 
 int main()
 {
@@ -152,6 +164,9 @@ int main()
     // cout << armStrongNumber(370);
     // cout << perfectNumber(28) << endl; // 1 (true)
     // cout << checkPrime(5);//1 (true)
-    cout << primeUptoN(6); // 3 (2,3,5)
+    // cout << primeUptoN(6); // 3 (2,3,5)
+    //cout << gcd(20, 40); // 20
+    cout << gcd(20, 40); // 20
+
     return 0;
 }
