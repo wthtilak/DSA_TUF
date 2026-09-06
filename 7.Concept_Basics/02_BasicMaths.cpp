@@ -176,7 +176,16 @@ int lcm(int n1, int n2)
     } while (1);
     return -1;
 }
+int lcmUsingFormula(int n1, int n2)
+{
+    // USING GCD :
+    // (n1 * n2 )/gcd(n1,n2)
 
+    int gcd = gcdEuclidean(n1, n2);
+    int lcm = (n1 * n2) / gcd;
+
+    return lcm;
+}
 int main()
 {
 
@@ -195,6 +204,7 @@ int main()
     // cout << gcd(20, 40); // 20
     // cout << gcd(20, 40); // 20
     // cout << gcdEuclidean(39, 40); // 20
-    cout << lcm(3, 4) << endl;
+    // cout << lcm(3, 4) << endl;
+    cout << lcmUsingFormula(3, 13) << endl;
     return 0;
 }
